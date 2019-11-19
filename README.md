@@ -5,10 +5,10 @@ As of version 0.25, we can define custom types and use these.
 
 The cyberpandas project uses this approach to allow for IP and MAC Addresses
 to be used with a richer and faster interface than if just using
-String representations of these networking values. See:
+String representations of these networking values. See the below for more:
 
-https://github.com/ContinuumIO/cyberpandas
-https://tomaugspurger.github.io/pandas-extension-arrays.html
+• https://github.com/ContinuumIO/cyberpandas
+• https://tomaugspurger.github.io/pandas-extension-arrays.html
 
 It also created the impetus for the creation of the extension system which
 is widely discussed in [this Pull Request on the pandas
