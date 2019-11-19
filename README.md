@@ -15,7 +15,7 @@ project](https://github.com/pandas-dev/pandas/pull/19268/)
 See [this story](https://tomaugspurger.github.io/pandas-extension-arrays.html)
 for more on how this came to pass.
 
-### using these extensions
+### Using these extensions
 
 The pandas docs outline the methods which must be implemented in the
 [ExtensionDtype](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.api.extensions.ExtensionDtype.html#pandas.api.extensions.ExtensionDtype)
@@ -27,13 +27,17 @@ But there isn't much in the way of a minimum working example.
 The [test suite for Pandas has an implementation for storing Decimals](https://github.com/pandas-dev/pandas/tree/e246c3b05924ac1fe083565a765ce847fcad3d91/pandas/tests/extension/decimal)
 , and is a great usage guide to these new extension classes.
 
-Here, is the miminum working implementation of that. It's lifted stright from
-the Test Suite in pandas, but helped me understand how to use these classes in
-building my own custom dtypes.
+[Here](https://github.com/tomharvey/pandas-extension-dtype/blob/master/decimal_array.py)
+, in the `decimal_array` file, is the miminum working implementation of that.
+It's lifted from the Test Suite in pandas and stripped of much of the mathematical functionality,
+but it helped me understand how to use these classes in building my own custom dtypes.
 
 While it lacks the ability to make much use of the Decimal objects 
 (See the full test suite for a more full implementation of usable Decimal), it
 provides a working implementation to build your custom data type from.
+
+
+### Example
 
 While you can always create a `Series` of floats in pandas:
 
