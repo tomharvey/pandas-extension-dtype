@@ -3,17 +3,19 @@
 A pandas Series (or DataFrame) can contain data in one of only a few types.
 As of version 0.25, we can define custom types and use these.
 
-The cyberpandas project uses this approach to allow for IP and MAC Addresses
-to be used with a richer and faster interface than if just using
-String representations of these networking values. See the below for more:
+The [cyberpandas](https://github.com/ContinuumIO/cyberpandas/) project uses
+this approach to allow for IP and MAC Addresses to be used with a richer
+and faster interface than if just using String representations of these
+networking values.
 
-https://github.com/ContinuumIO/cyberpandas
-
-https://tomaugspurger.github.io/pandas-extension-arrays.html
-
-It also created the impetus for the creation of the extension system which
-is widely discussed in [this Pull Request on the pandas
+It also created the impetus for the creation of the extension system,
+widely discussed in [this Pull Request on the pandas
 project](https://github.com/pandas-dev/pandas/pull/19268/)
+
+See [this story](https://tomaugspurger.github.io/pandas-extension-arrays.html)
+for more on how this came to pass.
+
+### using these extensions
 
 The pandas docs outline the methods which must be implemented in the
 [ExtensionDtype](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.api.extensions.ExtensionDtype.html#pandas.api.extensions.ExtensionDtype)
@@ -29,10 +31,11 @@ Here, is the miminum working implementation of that. It's lifted stright from
 the Test Suite in pandas, but helped me understand how to use these classes in
 building my own custom dtypes.
 
-While it lacks the ability to make much use of the Decimal objects, it
+While it lacks the ability to make much use of the Decimal objects 
+(See the full test suite for a more full implementation of usable Decimal), it
 provides a working implementation to build your custom data type from.
 
-While you can create a `Series` of floats in pandas:
+While you can always create a `Series` of floats in pandas:
 
 ``` python
 >>> float_series = pd.Series([0.1, 0.2, 0.3])
@@ -57,4 +60,4 @@ With the classes in here you can create a series of Decimals:
 dtype: decimal
 ```
 
-Which now holds the data as an array of `Decimal` objects.
+Which now holds the data as an array of largely useless `Decimal` objects! Success!
